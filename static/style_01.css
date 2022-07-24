@@ -1,0 +1,90 @@
+
+html {
+    height: 100%
+}
+
+body {
+  height: 100%!important;
+  width: 100%;
+  margin: 0!important;
+  background: linear-gradient(#654ea3, #eaafc8);
+  overflow-y: hidden;
+}
+
+#exportBtn {
+    position: absolute;
+    right: 5vw;
+    bottom: 10vh;
+    padding: 10px 15px;
+    background-color: #867aaf;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#exportBtn:hover {
+    background-color: #fff;
+    color: #867aaf;
+    border: 1px solid #867aaf;
+    transition: 0.3s;
+}
+
+#header{
+  text-align: center;
+  color: #fff;
+}
+
+#header h1 {
+  margin: 50px 0;
+}
+
+#header h3 {
+  padding: 10px;
+  background-color: #bea4d0;
+  margin: 0;
+  border-radius: 20px 20px 0px 0px;
+}
+
+#searchResult{
+  overflow: scroll;
+  height: 100%;
+  overflow-x: hidden;
+  padding: 10px 50px 50px 50px;
+}
+section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.jobList {
+    padding: 20px 10px;
+    display: inline;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 10%), 0 6px 20px 0 rgb(0 0 0 / 3%);
+    border-radius: 20px;
+    text-decoration: none;
+    color: #524957;
+}
+
+.jobList:hover {
+    background: #cfc5fb;
+    transition: 0.3s;
+}
+
+.jobList h4{
+  color:#53246d
+}
+
+.jobList p {
+  font-weight: bold;
+  color: #887993;
+}
+
+
+*{box-sizing: border-box}

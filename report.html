@@ -2,26 +2,25 @@
 <html>
 <head>
   <title>Job Search</title>
-  <style>
-    section{
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style_01.css') }}" />
+
 </head>
 <body>
+<div id = searchResult>
+  <div id="header">
   <h1>Job Results</h1>
   <h3>Found {{resultNumber}} results for: {{searchingBy}}</h3>
+  <a id="exportBtn" href="/export?word={{searchingBy}}">Export to CSV</a>
+  </div>
   <section>
-    <h4>Title</h4>
-    <h4>Company</h4>
-    <h4>Link</h4>
-    {% for job in jobs %}
-      <span>{{job.title}}</span>
-      <span>{{job.company}}</span>
-      <a href="{{job.link}}" target="_blank">Apply</a>
-    {% endfor %}
-  </section>
+
+  {% for job in jobs %}
+    <a class="jobList" href="{{job.link}}" target="_blank">
+      <h4>{{job.title}}</h4>
+      <p>{{job.company}}</p>
+    </a>   
+  {% endfor %}
+</section>
+</div>
 </body>
 </html>

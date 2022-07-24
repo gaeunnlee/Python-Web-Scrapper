@@ -1,10 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-
-
 results = []
-
 
 def extract_indeed_url(word):
     INDEED_URL = "https://www.indeed.com/jobs?q={word}&start=0"
@@ -18,7 +15,6 @@ def extract_indeed_url(word):
         extract_indeed_jobs(url)
     return (results)
 
-
 def extract_indeed_jobs(url):
     result = requests.get(url)
     soup = BeautifulSoup(result.text, "html.parser")
@@ -27,6 +23,6 @@ def extract_indeed_jobs(url):
     }).findAll("td", {"class": "resultContent"})
     for job in jobs:
         title = job.find("a", {"class": "jcs-JobTitle"}).string
-        link = job.find("a", {"class": "jcs-JobTitle"})["href"]
+        link = "https://www.indeed.com" + job.find("a", {"class": "jcs-JobTitle"})["href"]
         company = job.find("span", {"class": "companyName"}).string
         results.append({"title": title, "company": company, "link": link})
